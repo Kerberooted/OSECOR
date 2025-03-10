@@ -105,11 +105,12 @@ def check_cms_version(url):
 # Function to enumerate subdomains
 def enumerate_subdomains(domain):
     try:
-        output = subprocess.check_output(["subfinder", "-d", domain], stderr=subprocess.STDOUT, text=True)
+        output = subprocess.check_output(["subfinder", "-d", domain, "-silent"], text=True).strip()
         subdomains = output.splitlines()
         return max(0, 100 - len(subdomains) * 2), subdomains
     except Exception as e:
         return 100, f"Error: {e}"
+
 
 # Function to calculate the final score
 def calculate_final_score(scores):
