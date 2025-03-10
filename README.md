@@ -113,6 +113,7 @@ Replace https://example.com with the target website URL.
 
 ### Viewing Security Report
 cat security_report.json
+
 ![OSECOR JSONOutput](https://github.com/Kerberooted/OSECOR/blob/main/examples/osecor-json.PNG)
 
 
