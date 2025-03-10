@@ -109,9 +109,11 @@ python3 osecor.py https://example.com
 
 Replace https://example.com with the target website URL.
 
+![OSECOR CLI Execution](https://github.com/Kerberooted/OSECOR/blob/main/examples/osecor-cli.PNG)
+
 ### Viewing Security Report
 cat security_report.json
-
+![OSECOR JSONOutput](https://github.com/Kerberooted/OSECOR/blob/main/examples/osecor-json.PNG)
 
 
 ## Future Roadmap
