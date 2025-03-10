@@ -119,7 +119,7 @@ cat security_report.json
 
 ## Future Roadmap
 
-GUI Version (v2) – A Flask/Django-based UI for improved usability.
+GUI Version (v2) – A GUI for improved usability.
 
 CI/CD Integration – Automate security scoring within development pipelines.
 
