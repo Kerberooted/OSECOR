@@ -105,7 +105,11 @@ export PATH=$HOME/.local/bin:$PATH
 
 ### Running OSECOR
 
-python3 osecor.py https://example.com
+Open command terminal ( Run as Administrator)
+
+navigate to where osecor.py is downloaded
+
+Run this command to execute osecor: python3 osecor.py https://example.com
 
 Replace https://example.com with the target website URL.
 
