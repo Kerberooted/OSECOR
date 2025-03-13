@@ -70,6 +70,8 @@ IT & DevSecOps Teams – Integrate with CI/CD pipelines for continuous security 
 
 ### Windows Installation
 
+Download the osecor.zip file or use git clone to clone the repository.
+
 Install the latest version of Python (if not already installed): [Download Python](https://www.python.org/downloads/)
 
 Install dependencies:
@@ -82,11 +84,17 @@ Nuclei & Subfinder:
 [Download](https://www.github.com/projectdiscovery/nuclei/releases)
 [Download](https://www.github.com/projectdiscovery/subfinder/releases)
 
-Ensure these tools are in your PATH or use full paths when running commands.
+Ensure these tools are in your PATH or use full paths when running commands. 
+- Additionally you can set it globally for your user's account:
+
+pip install --user 'dependencies'
 
 ### Linux Installation
 
-Ensure Python is installed (if not, install it):
+Download the osecor.zip file or use git clone to clone the repository.
+
+Install the latest version of Python is installed (if not, installed): 
+
 sudo apt install python3 python3-pip -y
 
 Install required Python libraries:
