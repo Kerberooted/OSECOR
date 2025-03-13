@@ -70,10 +70,10 @@ IT & DevSecOps Teams – Integrate with CI/CD pipelines for continuous security 
 
 ### Windows Installation
 
-Install Python3 (if not already installed): [Download Python](https://www.python.org/downloads/)
+Install the latest version of Python (if not already installed): [Download Python](https://www.python.org/downloads/)
 
 Install dependencies:
-pip install requests beautifulsoup4
+pip install requests beautifulsoup4 --users
 
 Install OWASP ZAP, Nuclei, and Subfinder:
 OWASP ZAP: [Download](https://www.zaproxy.org/download/)
@@ -109,7 +109,10 @@ Open command terminal ( Run as Administrator)
 
 navigate to where osecor.py is downloaded
 
-Run this command to execute osecor: python3 osecor.py https://example.com
+Run this command to execute osecor: 
+
+Linux - python3 osecor.py https://example.com
+Windows - python.exe osecor.py https://example.com
 
 Replace https://example.com with the target website URL.
 
