@@ -75,7 +75,7 @@ Download the osecor.zip file or use git clone to clone the repository.
 Install the latest version of Python (if not already installed): [Download Python](https://www.python.org/downloads/)
 
 Install dependencies:
-pip install requests beautifulsoup4 --users
+pip install requests beautifulsoup4 --user
 
 Install OWASP ZAP, Nuclei, and Subfinder:
 OWASP ZAP: [Download](https://www.zaproxy.org/download/)
@@ -93,7 +93,7 @@ pip install --user 'dependencies'
 
 Download the osecor.zip file or use git clone to clone the repository.
 
-Install the latest version of Python is installed (if not, installed): 
+Install the latest version of Python is installed (if not already installed): 
 
 sudo apt install python3 python3-pip -y
 
