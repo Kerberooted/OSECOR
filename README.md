@@ -70,7 +70,7 @@ IT & DevSecOps Teams – Integrate with CI/CD pipelines for continuous security 
 
 ### Windows Installation
 
-Install Python (if not already installed): [Download Python](https://www.python.org/downloads/)
+Install Python3 (if not already installed): [Download Python](https://www.python.org/downloads/)
 
 Install dependencies:
 pip install requests beautifulsoup4
