@@ -152,8 +152,8 @@ Contributions are welcome. If you have suggestions or improvements, please fork 
 
 ## License
 
-OSECOR is licensed under the Apache License 2.0. This allows open use, modification, and distribution while ensuring that any derivatives acknowledge the original work.
-
+OSECOR is licensed under the **GNU General Public License v3.0 (GPL-3.0)**.  
+You are free to use, modify, and distribute this tool as long as any derivative works remain under the same license and credit the original authors.
 
 
 ## Credits & Acknowledgments
