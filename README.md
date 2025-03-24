@@ -10,45 +10,36 @@ This release (v1) is a CLI-based tool that performs multi-layered security asses
 
 ## Features
 
-Security Headers Analysis
-
-Detects missing HTTP security headers such as CSP, HSTS, X-Frame-Options, and more.
-
+Security Headers Analysis  
+Detects missing HTTP security headers such as CSP, HSTS, X-Frame-Options, and more.  
 Assigns negative points for missing or misconfigured headers.
 
-SSL/TLS Security Assessment
-
-Uses SSL Labs API to evaluate SSL/TLS configurations.
-
+SSL/TLS Security Assessment  
+Uses SSL Labs API to evaluate SSL/TLS configurations.  
 Identifies weak ciphers, outdated TLS versions, and assigns an overall security grade.
 
-Active Vulnerability Scanning
-
-Integrates OWASP ZAP and Nuclei to scan for XSS, SQLi, LFI, RCE, and other vulnerabilities.
-
+Active Vulnerability Scanning  
+Integrates OWASP ZAP and Nuclei to scan for XSS, SQLi, LFI, RCE, and other vulnerabilities.  
 Parses results and assigns scores based on CVSS scoring.
 
-Authentication & Session Security Checks
-
+Authentication & Session Security Checks  
 Examines session security controls, secure cookies, HTTP-only flags, and MFA presence.
 
-CMS & Technology Stack Enumeration
-
-Detects outdated WordPress, Joomla, and Drupal versions.
-
+CMS & Technology Stack Enumeration  
+Detects outdated WordPress, Joomla, and Drupal versions.  
 Identifies potential misconfigurations and assigns risk scores.
 
-Subdomain & Exposure Analysis
-
-Uses Subfinder to identify exposed subdomains.
-
+Subdomain & Exposure Analysis  
+Uses Subfinder to identify exposed subdomains.  
 Checks for open directories, admin panels, and exposed assets.
 
-Final Security Score Calculation
+WAF Detection  
+Uses WAFW00F to detect Web Application Firewalls and reports vendor information.  
+Detected WAFs improve the final security score positively.
 
-Uses a deterministic scoring algorithm to provide a clear, quantifiable security rating.
-
-Generates structured JSON reports for further analysis.
+Final Security Score Calculation  
+Uses a deterministic scoring algorithm to provide a clear, quantifiable security rating.  
+Generates structured reports in JSON, HTML, CSV, and TXT formats.
 
 
 
@@ -56,13 +47,13 @@ Generates structured JSON reports for further analysis.
 
 OSECOR is designed to support:
 
-Penetration Testers & Bug Hunters – Automate reconnaissance and vulnerability assessment.
-
 Security Engineers – Measure and track web security posture over time.
 
 Developers – Identify missing security best practices before deployment.
 
 IT & DevSecOps Teams – Integrate with CI/CD pipelines for continuous security testing.
+
+Penetration Testers & Bug Hunters – Automate reconnaissance and vulnerability assessment.
 
 
 
@@ -111,30 +102,63 @@ Ensure Nuclei and Subfinder are in your PATH:
 export PATH=$HOME/.local/bin:$PATH
 
 
-### Running OSECOR
 
-Open command terminal ( Run as Administrator)
+## Running OSECOR
 
-navigate to where osecor.py is downloaded
+Windows - Open Command Terminal or Powershell ( Run either as Administrator)
+Linux - Open Root Terminal
+
+Navigate (cd) to where osecor.py is downloaded
 
 Run this command to execute osecor: 
 
-Linux - python3 osecor.py https://example.com
-Windows - python.exe osecor.py https://example.com
+### Required Command to execute the tool
+Linux - python3 osecor.py https://example.com -o filetype
+Windows - python.exe osecor.py https://example.com -o filetype
 
 Replace https://example.com with the target website URL.
 
-![OSECOR CLI Execution](https://github.com/Kerberooted/OSECOR/blob/main/examples/osecor-cli.PNG)
+![OSECOR CLI Execution](https://github.com/Kerberooted/OSECOR/blob/main/examples/proper-use.PNG?raw=true)
 
-### Viewing Security Report
-cat security_report.json
+### Optional command to specify the filename for organization
+python3 osecor.py https://example.com -o filetype -f filename
+python.exe osecor.py https://example.com -o filetype -f filename
 
-![OSECOR JSONOutput](https://github.com/Kerberooted/OSECOR/blob/main/examples/osecor-json.PNG)
+Replace filetype with csv, html, json, or txt to specify the required document form (i.e. "... -o html)
+Replace filename after the -f flag to specify a unique filename (i.e. "... -o txt -f custom_name.txt")
+
+If the '-f' flag is not used the tool will automatically generate the results to a document named after the domain that was scanned
+Multiple scans of the same website using the same '-o' flag and without a '-f' flag will result in each previous scan of that website being overwritten. To prevent this, it is recommended to use the '-f' flag and specify the filename you want to save.
+
+### Improper Usage Example
+
+![OSECOR CLI Execution](https://github.com/Kerberooted/OSECOR/blob/main/examples/improper-use.png?raw=true)
+
+### Proper Command-Line Usage Example
+
+![OSECOR CLI Execution](https://github.com/Kerberooted/OSECOR/blob/main/examples/proper-use.PNG?raw=true)
 
 
-## Future Roadmap
+## Viewing Security Report
 
-GUI Version (v2) – A GUI for improved usability.
+Reports will be saved to the same directory that the osecor program was installed and/or executed.
+### CSV
+![OSECOR JSONOutput](https://github.com/Kerberooted/OSECOR/blob/main/examples/osecor-csv.PNG?raw=true)
+
+### HTML
+![OSECOR JSONOutput](https://github.com/Kerberooted/OSECOR/blob/main/examples/osecor-html.PNG?raw=true)
+
+### JSON
+![OSECOR JSONOutput](https://github.com/Kerberooted/OSECOR/blob/main/examples/osecor-json.PNG?raw=true)
+
+### TXT
+
+![OSECOR JSONOutput](https://github.com/Kerberooted/OSECOR/blob/main/examples/osecor-txt.PNG?raw=true)
+
+
+## Future Roadmap (Non-exhaustive)
+
+GUI Version – A GUI for improved usability and user experience.
 
 CI/CD Integration – Automate security scoring within development pipelines.
 
@@ -142,6 +166,7 @@ Customizable Scoring Metrics – Allow users to adjust risk weights.
 
 Machine Learning Integration – Improve risk assessment through AI-driven analysis.
 
+More complex vulnerability assessment for a more detailed analysis and remediation recommendations.
 
 
 ## Contributing
@@ -149,10 +174,9 @@ Machine Learning Integration – Improve risk assessment through AI-driven analy
 Contributions are welcome. If you have suggestions or improvements, please fork the repository and submit a pull request. Adhere to the existing code structure and ensure any modifications align with OSECOR's goals.
 
 
-
 ## License
 
-OSECOR is licensed under the **GNU General Public License v3.0 (GPL-3.0)**.  
+OSECOR is licensed under the GNU General Public License v3.0 (GPL-3.0).
 You are free to use, modify, and distribute this tool as long as any derivative works remain under the same license and credit the original authors.
 
 
@@ -167,5 +191,8 @@ Nuclei – Template-based security scanning
 Subfinder – Subdomain enumeration
 
 SSL Labs API – SSL/TLS security evaluation
+
+Wafw00f - WAF identifier
+
 
 Thanks to the open-source security community and penetration testing researchers whose work has inspired and contributed to this project.
