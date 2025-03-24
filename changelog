@@ -1,0 +1,16 @@
+#[v1.1] - 03-24-2025
+
+## Added
+
+WAF detection using WAFW00F; WAF presence improves final score
+
+Output format selection using -o flag (csv, html, json, txt)
+
+Optional custom filename support using -f flag
+
+## Changed
+
+Final security score now includes WAF scan result as a positive security control
+
+Cleaned WAF output in both terminal and report files
+
